@@ -1,0 +1,631 @@
+11/15/2023 10:50:53 PM - INFO - SSH: Trying SSH connection to 10.10.10.3:22 as user root
+11/15/2023 10:50:53 PM - INFO - Connected (version 2.0, client OpenSSH_9.2p1)
+11/15/2023 10:50:53 PM - INFO - Authentication (password) successful!
+11/15/2023 10:50:53 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:50:53 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:50:54 PM - INFO - SSH: Command output: PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+11/15/2023 10:50:54 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:50:54 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:50:54 PM - INFO - SSH: Terminating connection to 10.10.10.3:22
+11/15/2023 10:50:54 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:50:54 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres without database
+11/15/2023 10:50:54 PM - INFO - SQL: Connection successful
+11/15/2023 10:50:54 PM - INFO - SQL: Creating database VM
+11/15/2023 10:50:54 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:50:54 PM - INFO - SQL: Query: CREATE DATABASE VM;
+11/15/2023 10:50:54 PM - WARNING - SQL: Database VM already exists
+11/15/2023 10:50:54 PM - INFO - SQL: Closing connection to PostgreSQL. Database: None
+11/15/2023 10:50:54 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:50:54 PM - INFO - SQL: Connection successful
+11/15/2023 10:50:54 PM - INFO - SQL: Creating schema VM_schema
+11/15/2023 10:50:54 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:50:54 PM - INFO - SQL: Query: CREATE SCHEMA IF NOT EXISTS VM_schema;
+11/15/2023 10:50:54 PM - INFO - SQL: Query successful
+11/15/2023 10:50:54 PM - INFO - SQL: Creating table results in schema VM_schema
+11/15/2023 10:50:54 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:50:54 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:50:54 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:50:54 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:50:54 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.3','Debian','12 (bookworm)','x86_64');
+            
+11/15/2023 10:50:54 PM - INFO - SQL: Query successful
+11/15/2023 10:50:54 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:50:54 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:50:54 PM - INFO - SQL: Connection successful
+11/15/2023 10:50:54 PM - INFO - Getting values from table VM_schema.results
+11/15/2023 10:50:54 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:50:54 PM - INFO - SQL: Query: 
+            SELECT * FROM VM_schema.results;
+        
+11/15/2023 10:50:54 PM - INFO - SQL: Query successful
+11/15/2023 10:51:01 PM - INFO - SSH: Trying SSH connection to 10.10.10.3:22 as user root
+11/15/2023 10:51:01 PM - INFO - Connected (version 2.0, client OpenSSH_9.2p1)
+11/15/2023 10:51:02 PM - INFO - Authentication (password) successful!
+11/15/2023 10:51:02 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:51:02 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:51:02 PM - INFO - SSH: Command output: PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+11/15/2023 10:51:02 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:51:02 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:51:02 PM - INFO - SSH: Terminating connection to 10.10.10.3:22
+11/15/2023 10:51:02 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:51:02 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres without database
+11/15/2023 10:51:02 PM - INFO - SQL: Connection successful
+11/15/2023 10:51:02 PM - INFO - SQL: Creating database VM
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: CREATE DATABASE VM;
+11/15/2023 10:51:02 PM - WARNING - SQL: Database VM already exists
+11/15/2023 10:51:02 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:51:02 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:51:02 PM - INFO - SQL: Connection successful
+11/15/2023 10:51:02 PM - INFO - SQL: Creating schema VM_schema
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: CREATE SCHEMA IF NOT EXISTS VM_schema;
+11/15/2023 10:51:02 PM - INFO - SQL: Query successful
+11/15/2023 10:51:02 PM - INFO - SQL: Creating table results in schema VM_schema
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:51:02 PM - WARNING - Results table already exists. Recreating...
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: 
+            DROP TABLE VM_schema.results;
+        
+11/15/2023 10:51:02 PM - INFO - SQL: Query successful
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:51:02 PM - INFO - SQL: Query successful
+11/15/2023 10:51:02 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.3','Debian','12 (bookworm)','x86_64');
+            
+11/15/2023 10:51:02 PM - INFO - SQL: Query successful
+11/15/2023 10:51:02 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:51:02 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:51:02 PM - INFO - SQL: Connection successful
+11/15/2023 10:51:02 PM - INFO - Getting values from table VM_schema.results
+11/15/2023 10:51:02 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:51:02 PM - INFO - SQL: Query: 
+            SELECT * FROM VM_schema.results;
+        
+11/15/2023 10:51:02 PM - INFO - SQL: Query successful
+11/15/2023 10:51:59 PM - INFO - SSH: Trying SSH connection to 10.10.10.4:22 as user root
+11/15/2023 10:51:59 PM - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+11/15/2023 10:51:59 PM - INFO - Authentication (password) successful!
+11/15/2023 10:51:59 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:51:59 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:52:00 PM - INFO - SSH: Command output: PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.3 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+11/15/2023 10:52:00 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:52:00 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:52:00 PM - INFO - SSH: Terminating connection to 10.10.10.4:22
+11/15/2023 10:52:00 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:52:00 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres without database
+11/15/2023 10:52:00 PM - INFO - SQL: Connection successful
+11/15/2023 10:52:00 PM - INFO - SQL: Creating database VM
+11/15/2023 10:52:00 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:52:00 PM - INFO - SQL: Query: CREATE DATABASE VM;
+11/15/2023 10:52:00 PM - WARNING - SQL: Database VM already exists
+11/15/2023 10:52:00 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:52:00 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:52:00 PM - INFO - SQL: Connection successful
+11/15/2023 10:52:00 PM - INFO - SQL: Creating schema VM_schema
+11/15/2023 10:52:00 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:52:00 PM - INFO - SQL: Query: CREATE SCHEMA IF NOT EXISTS VM_schema;
+11/15/2023 10:52:00 PM - INFO - SQL: Query successful
+11/15/2023 10:52:00 PM - INFO - SQL: Creating table results in schema VM_schema
+11/15/2023 10:52:00 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:52:00 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:52:00 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:52:00 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:52:00 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.4','Ubuntu','22.04.3 LTS (Jammy Jellyfish)','x86_64');
+            
+11/15/2023 10:52:00 PM - INFO - SQL: Query successful
+11/15/2023 10:52:00 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:52:00 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:52:00 PM - INFO - SQL: Connection successful
+11/15/2023 10:52:00 PM - INFO - Getting values from table VM_schema.results
+11/15/2023 10:52:00 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:52:00 PM - INFO - SQL: Query: 
+            SELECT * FROM VM_schema.results;
+        
+11/15/2023 10:52:00 PM - INFO - SQL: Query successful
+11/15/2023 10:57:58 PM - INFO - Network: Getting list of host network interfaces
+11/15/2023 10:57:58 PM - INFO - Network: List of interfaces formed successfully
+11/15/2023 10:57:58 PM - INFO - Network: Interfaces: lo enp0s3 enp0s8
+11/15/2023 10:57:58 PM - INFO - Network: Forming list of IP-exclusions
+11/15/2023 10:57:58 PM - INFO - Network: Searhing for interface in network 10.10.10.0/24
+11/15/2023 10:57:58 PM - INFO - Network: Getting IPv4 of network interface lo
+11/15/2023 10:57:58 PM - INFO - Network: IPv4 for lo is 127.0.0.1
+11/15/2023 10:57:58 PM - INFO - Network: Getting IPv4 of network interface enp0s3
+11/15/2023 10:57:58 PM - INFO - Network: IPv4 for enp0s3 is 10.0.2.15
+11/15/2023 10:57:58 PM - INFO - Network: Getting IPv4 of network interface enp0s8
+11/15/2023 10:57:58 PM - INFO - Network: IPv4 for enp0s8 is 10.10.10.2
+11/15/2023 10:57:58 PM - INFO - Network: Found interface enp0s8 with IP 10.10.10.2. Adding to exclusions...
+11/15/2023 10:57:58 PM - INFO - Network: List of exclusions formed successfully
+11/15/2023 10:57:58 PM - INFO - Network: Exclusions: 10.10.10.2 10.10.10.0 10.10.10.7 10.10.10.8 10.10.10.9 10.10.10.10 10.10.10.11 10.10.10.12 10.10.10.13 10.10.10.14 10.10.10.15 10.10.10.16 10.10.10.17 10.10.10.18 10.10.10.19 10.10.10.20 10.10.10.21 10.10.10.22 10.10.10.23 10.10.10.24 10.10.10.25 10.10.10.26 10.10.10.27 10.10.10.28 10.10.10.29 10.10.10.30 10.10.10.31 10.10.10.32 10.10.10.33 10.10.10.34 10.10.10.35 10.10.10.36 10.10.10.37 10.10.10.38 10.10.10.39 10.10.10.40 10.10.10.41 10.10.10.42 10.10.10.43 10.10.10.44 10.10.10.45 10.10.10.46 10.10.10.47 10.10.10.48 10.10.10.49 10.10.10.50 10.10.10.51 10.10.10.52 10.10.10.53 10.10.10.54 10.10.10.55 10.10.10.56 10.10.10.57 10.10.10.58 10.10.10.59 10.10.10.60 10.10.10.61 10.10.10.62 10.10.10.63 10.10.10.64 10.10.10.65 10.10.10.66 10.10.10.67 10.10.10.68 10.10.10.69 10.10.10.70 10.10.10.71 10.10.10.72 10.10.10.73 10.10.10.74 10.10.10.75 10.10.10.76 10.10.10.77 10.10.10.78 10.10.10.79 10.10.10.80 10.10.10.81 10.10.10.82 10.10.10.83 10.10.10.84 10.10.10.85 10.10.10.86 10.10.10.87 10.10.10.88 10.10.10.89 10.10.10.90 10.10.10.91 10.10.10.92 10.10.10.93 10.10.10.94 10.10.10.95 10.10.10.96 10.10.10.97 10.10.10.98 10.10.10.99 10.10.10.100 10.10.10.101 10.10.10.102 10.10.10.103 10.10.10.104 10.10.10.105 10.10.10.106 10.10.10.107 10.10.10.108 10.10.10.109 10.10.10.110 10.10.10.111 10.10.10.112 10.10.10.113 10.10.10.114 10.10.10.115 10.10.10.116 10.10.10.117 10.10.10.118 10.10.10.119 10.10.10.120 10.10.10.121 10.10.10.122 10.10.10.123 10.10.10.124 10.10.10.125 10.10.10.126 10.10.10.127 10.10.10.128 10.10.10.129 10.10.10.130 10.10.10.131 10.10.10.132 10.10.10.133 10.10.10.134 10.10.10.135 10.10.10.136 10.10.10.137 10.10.10.138 10.10.10.139 10.10.10.140 10.10.10.141 10.10.10.142 10.10.10.143 10.10.10.144 10.10.10.145 10.10.10.146 10.10.10.147 10.10.10.148 10.10.10.149 10.10.10.150 10.10.10.151 10.10.10.152 10.10.10.153 10.10.10.154 10.10.10.155 10.10.10.156 10.10.10.157 10.10.10.158 10.10.10.159 10.10.10.160 10.10.10.161 10.10.10.162 10.10.10.163 10.10.10.164 10.10.10.165 10.10.10.166 10.10.10.167 10.10.10.168 10.10.10.169 10.10.10.170 10.10.10.171 10.10.10.172 10.10.10.173 10.10.10.174 10.10.10.175 10.10.10.176 10.10.10.177 10.10.10.178 10.10.10.179 10.10.10.180 10.10.10.181 10.10.10.182 10.10.10.183 10.10.10.184 10.10.10.185 10.10.10.186 10.10.10.187 10.10.10.188 10.10.10.189 10.10.10.190 10.10.10.191 10.10.10.192 10.10.10.193 10.10.10.194 10.10.10.195 10.10.10.196 10.10.10.197 10.10.10.198 10.10.10.199 10.10.10.200 10.10.10.201 10.10.10.202 10.10.10.203 10.10.10.204 10.10.10.205 10.10.10.206 10.10.10.207 10.10.10.208 10.10.10.209 10.10.10.210 10.10.10.211 10.10.10.212 10.10.10.213 10.10.10.214 10.10.10.215 10.10.10.216 10.10.10.217 10.10.10.218 10.10.10.219 10.10.10.220 10.10.10.221 10.10.10.222 10.10.10.223 10.10.10.224 10.10.10.225 10.10.10.226 10.10.10.227 10.10.10.228 10.10.10.229 10.10.10.230 10.10.10.231 10.10.10.232 10.10.10.233 10.10.10.234 10.10.10.235 10.10.10.236 10.10.10.237 10.10.10.238 10.10.10.239 10.10.10.240 10.10.10.241 10.10.10.242 10.10.10.243 10.10.10.244 10.10.10.245 10.10.10.246 10.10.10.247 10.10.10.248 10.10.10.249 10.10.10.250 10.10.10.251 10.10.10.252 10.10.10.253 10.10.10.254 10.10.10.255
+11/15/2023 10:57:58 PM - INFO - Network: Forming list of possible hosts on network
+11/15/2023 10:57:58 PM - INFO - Network: Host list successfully formed
+11/15/2023 10:57:58 PM - INFO - Network: Applying exclusions to hosts
+11/15/2023 10:57:58 PM - INFO - Network: Exclusions applied successfully
+11/15/2023 10:57:58 PM - INFO - SSH: Beginning scan of target network. Ports to scan: 22 222 2223
+11/15/2023 10:57:58 PM - INFO - SSH: Scanning 10.10.10.1:22 for listening SSH-server
+11/15/2023 10:58:01 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:01 PM - INFO - SSH: Scanning 10.10.10.1:222 for listening SSH-server
+11/15/2023 10:58:04 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:04 PM - INFO - SSH: Scanning 10.10.10.1:2223 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.3:22 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is open
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.3:222 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.3:2223 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.4:22 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is open
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.4:222 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.4:2223 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.5:22 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is open
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.5:222 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.5:2223 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.6:22 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is open
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.6:222 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SSH: Scanning 10.10.10.6:2223 for listening SSH-server
+11/15/2023 10:58:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:58:07 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres without database
+11/15/2023 10:58:07 PM - INFO - SQL: Connection successful
+11/15/2023 10:58:07 PM - INFO - SQL: Creating database VM
+11/15/2023 10:58:07 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:07 PM - INFO - SQL: Query: CREATE DATABASE VM;
+11/15/2023 10:58:07 PM - WARNING - SQL: Database VM already exists
+11/15/2023 10:58:07 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:58:07 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:58:07 PM - INFO - SQL: Connection successful
+11/15/2023 10:58:07 PM - INFO - SQL: Creating schema VM_schema
+11/15/2023 10:58:07 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:07 PM - INFO - SQL: Query: CREATE SCHEMA IF NOT EXISTS VM_schema;
+11/15/2023 10:58:07 PM - INFO - SQL: Query successful
+11/15/2023 10:58:07 PM - INFO - SQL: Creating table results in schema VM_schema
+11/15/2023 10:58:07 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:07 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:58:07 PM - WARNING - Results table already exists. Recreating...
+11/15/2023 10:58:07 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:07 PM - INFO - SQL: Query: 
+            DROP TABLE VM_schema.results;
+        
+11/15/2023 10:58:07 PM - INFO - SQL: Query successful
+11/15/2023 10:58:07 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:07 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:58:07 PM - INFO - SQL: Query successful
+11/15/2023 10:58:07 PM - INFO - SSH: Trying SSH connection to 10.10.10.3:22 as user root
+11/15/2023 10:58:07 PM - INFO - Connected (version 2.0, client OpenSSH_9.2p1)
+11/15/2023 10:58:07 PM - INFO - Authentication (password) successful!
+11/15/2023 10:58:07 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:58:07 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:58:07 PM - INFO - SSH: Command output: PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+11/15/2023 10:58:07 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:58:07 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:58:07 PM - INFO - SSH: Terminating connection to 10.10.10.3:22
+11/15/2023 10:58:07 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:58:07 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:58:07 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:07 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.3','Debian','12 (bookworm)','x86_64');
+            
+11/15/2023 10:58:07 PM - INFO - SQL: Query successful
+11/15/2023 10:58:07 PM - INFO - SSH: Trying SSH connection to 10.10.10.4:22 as user root
+11/15/2023 10:58:07 PM - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+11/15/2023 10:58:07 PM - INFO - Authentication (password) successful!
+11/15/2023 10:58:07 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:58:07 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:58:08 PM - INFO - SSH: Command output: PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.3 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+11/15/2023 10:58:08 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:58:08 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:58:08 PM - INFO - SSH: Terminating connection to 10.10.10.4:22
+11/15/2023 10:58:08 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:58:08 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:58:08 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:08 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.4','Ubuntu','22.04.3 LTS (Jammy Jellyfish)','x86_64');
+            
+11/15/2023 10:58:08 PM - INFO - SQL: Query successful
+11/15/2023 10:58:08 PM - INFO - SSH: Trying SSH connection to 10.10.10.5:22 as user root
+11/15/2023 10:58:08 PM - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+11/15/2023 10:58:08 PM - INFO - Authentication (password) successful!
+11/15/2023 10:58:08 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:58:08 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:58:08 PM - INFO - SSH: Command output: NAME="Linux Mint"
+VERSION="21.2 (Victoria)"
+ID=linuxmint
+ID_LIKE="ubuntu debian"
+PRETTY_NAME="Linux Mint 21.2"
+VERSION_ID="21.2"
+HOME_URL="https://www.linuxmint.com/"
+SUPPORT_URL="https://forums.linuxmint.com/"
+BUG_REPORT_URL="http://linuxmint-troubleshooting-guide.readthedocs.io/en/latest/"
+PRIVACY_POLICY_URL="https://www.linuxmint.com/"
+VERSION_CODENAME=victoria
+UBUNTU_CODENAME=jammy
+
+11/15/2023 10:58:08 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:58:08 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:58:08 PM - INFO - SSH: Terminating connection to 10.10.10.5:22
+11/15/2023 10:58:08 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:58:08 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:58:08 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:08 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.5','Other Linux','21.2 (Victoria)','x86_64');
+            
+11/15/2023 10:58:08 PM - INFO - SQL: Query successful
+11/15/2023 10:58:08 PM - INFO - SSH: Trying SSH connection to 10.10.10.6:22 as user root
+11/15/2023 10:58:08 PM - INFO - Connected (version 2.0, client OpenSSH_9.5)
+11/15/2023 10:58:08 PM - INFO - Authentication (password) successful!
+11/15/2023 10:58:08 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:58:08 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:58:08 PM - INFO - SSH: Command output: NAME="Manjaro Linux"
+PRETTY_NAME="Manjaro Linux"
+ID=manjaro
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="32;1;24;144;200"
+HOME_URL="https://manjaro.org/"
+DOCUMENTATION_URL="https://wiki.manjaro.org/"
+SUPPORT_URL="https://forum.manjaro.org/"
+BUG_REPORT_URL="https://docs.manjaro.org/reporting-bugs/"
+PRIVACY_POLICY_URL="https://manjaro.org/privacy-policy/"
+LOGO=manjarolinux
+
+11/15/2023 10:58:08 PM - INFO - SSH: Executin command cat /etc/lsb-release
+11/15/2023 10:58:08 PM - INFO - SSH: Command output: DISTRIB_ID="ManjaroLinux"
+DISTRIB_RELEASE="23.1.0"
+DISTRIB_CODENAME="Vulcan"
+DISTRIB_DESCRIPTION="Manjaro Linux"
+
+11/15/2023 10:58:08 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:58:09 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:58:09 PM - INFO - SSH: Terminating connection to 10.10.10.6:22
+11/15/2023 10:58:09 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:58:09 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:58:09 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:09 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.6','Manjaro','23.1.0','x86_64');
+            
+11/15/2023 10:58:09 PM - INFO - SQL: Query successful
+11/15/2023 10:58:09 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:58:09 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:58:09 PM - INFO - SQL: Connection successful
+11/15/2023 10:58:09 PM - INFO - Getting values from table VM_schema.results
+11/15/2023 10:58:09 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:58:09 PM - INFO - SQL: Query: 
+            SELECT * FROM VM_schema.results;
+        
+11/15/2023 10:58:09 PM - INFO - SQL: Query successful
+11/15/2023 10:59:01 PM - INFO - Network: Getting list of host network interfaces
+11/15/2023 10:59:01 PM - INFO - Network: List of interfaces formed successfully
+11/15/2023 10:59:01 PM - INFO - Network: Interfaces: lo enp0s3 enp0s8
+11/15/2023 10:59:01 PM - INFO - Network: Forming list of IP-exclusions
+11/15/2023 10:59:01 PM - INFO - Network: Searhing for interface in network 10.10.10.0/24
+11/15/2023 10:59:01 PM - INFO - Network: Getting IPv4 of network interface lo
+11/15/2023 10:59:01 PM - INFO - Network: IPv4 for lo is 127.0.0.1
+11/15/2023 10:59:01 PM - INFO - Network: Getting IPv4 of network interface enp0s3
+11/15/2023 10:59:01 PM - INFO - Network: IPv4 for enp0s3 is 10.0.2.15
+11/15/2023 10:59:01 PM - INFO - Network: Getting IPv4 of network interface enp0s8
+11/15/2023 10:59:01 PM - INFO - Network: IPv4 for enp0s8 is 10.10.10.2
+11/15/2023 10:59:01 PM - INFO - Network: Found interface enp0s8 with IP 10.10.10.2. Adding to exclusions...
+11/15/2023 10:59:01 PM - INFO - Network: List of exclusions formed successfully
+11/15/2023 10:59:01 PM - INFO - Network: Exclusions: 10.10.10.2 10.10.10.0 10.10.10.7 10.10.10.8 10.10.10.9 10.10.10.10 10.10.10.11 10.10.10.12 10.10.10.13 10.10.10.14 10.10.10.15 10.10.10.16 10.10.10.17 10.10.10.18 10.10.10.19 10.10.10.20 10.10.10.21 10.10.10.22 10.10.10.23 10.10.10.24 10.10.10.25 10.10.10.26 10.10.10.27 10.10.10.28 10.10.10.29 10.10.10.30 10.10.10.31 10.10.10.32 10.10.10.33 10.10.10.34 10.10.10.35 10.10.10.36 10.10.10.37 10.10.10.38 10.10.10.39 10.10.10.40 10.10.10.41 10.10.10.42 10.10.10.43 10.10.10.44 10.10.10.45 10.10.10.46 10.10.10.47 10.10.10.48 10.10.10.49 10.10.10.50 10.10.10.51 10.10.10.52 10.10.10.53 10.10.10.54 10.10.10.55 10.10.10.56 10.10.10.57 10.10.10.58 10.10.10.59 10.10.10.60 10.10.10.61 10.10.10.62 10.10.10.63 10.10.10.64 10.10.10.65 10.10.10.66 10.10.10.67 10.10.10.68 10.10.10.69 10.10.10.70 10.10.10.71 10.10.10.72 10.10.10.73 10.10.10.74 10.10.10.75 10.10.10.76 10.10.10.77 10.10.10.78 10.10.10.79 10.10.10.80 10.10.10.81 10.10.10.82 10.10.10.83 10.10.10.84 10.10.10.85 10.10.10.86 10.10.10.87 10.10.10.88 10.10.10.89 10.10.10.90 10.10.10.91 10.10.10.92 10.10.10.93 10.10.10.94 10.10.10.95 10.10.10.96 10.10.10.97 10.10.10.98 10.10.10.99 10.10.10.100 10.10.10.101 10.10.10.102 10.10.10.103 10.10.10.104 10.10.10.105 10.10.10.106 10.10.10.107 10.10.10.108 10.10.10.109 10.10.10.110 10.10.10.111 10.10.10.112 10.10.10.113 10.10.10.114 10.10.10.115 10.10.10.116 10.10.10.117 10.10.10.118 10.10.10.119 10.10.10.120 10.10.10.121 10.10.10.122 10.10.10.123 10.10.10.124 10.10.10.125 10.10.10.126 10.10.10.127 10.10.10.128 10.10.10.129 10.10.10.130 10.10.10.131 10.10.10.132 10.10.10.133 10.10.10.134 10.10.10.135 10.10.10.136 10.10.10.137 10.10.10.138 10.10.10.139 10.10.10.140 10.10.10.141 10.10.10.142 10.10.10.143 10.10.10.144 10.10.10.145 10.10.10.146 10.10.10.147 10.10.10.148 10.10.10.149 10.10.10.150 10.10.10.151 10.10.10.152 10.10.10.153 10.10.10.154 10.10.10.155 10.10.10.156 10.10.10.157 10.10.10.158 10.10.10.159 10.10.10.160 10.10.10.161 10.10.10.162 10.10.10.163 10.10.10.164 10.10.10.165 10.10.10.166 10.10.10.167 10.10.10.168 10.10.10.169 10.10.10.170 10.10.10.171 10.10.10.172 10.10.10.173 10.10.10.174 10.10.10.175 10.10.10.176 10.10.10.177 10.10.10.178 10.10.10.179 10.10.10.180 10.10.10.181 10.10.10.182 10.10.10.183 10.10.10.184 10.10.10.185 10.10.10.186 10.10.10.187 10.10.10.188 10.10.10.189 10.10.10.190 10.10.10.191 10.10.10.192 10.10.10.193 10.10.10.194 10.10.10.195 10.10.10.196 10.10.10.197 10.10.10.198 10.10.10.199 10.10.10.200 10.10.10.201 10.10.10.202 10.10.10.203 10.10.10.204 10.10.10.205 10.10.10.206 10.10.10.207 10.10.10.208 10.10.10.209 10.10.10.210 10.10.10.211 10.10.10.212 10.10.10.213 10.10.10.214 10.10.10.215 10.10.10.216 10.10.10.217 10.10.10.218 10.10.10.219 10.10.10.220 10.10.10.221 10.10.10.222 10.10.10.223 10.10.10.224 10.10.10.225 10.10.10.226 10.10.10.227 10.10.10.228 10.10.10.229 10.10.10.230 10.10.10.231 10.10.10.232 10.10.10.233 10.10.10.234 10.10.10.235 10.10.10.236 10.10.10.237 10.10.10.238 10.10.10.239 10.10.10.240 10.10.10.241 10.10.10.242 10.10.10.243 10.10.10.244 10.10.10.245 10.10.10.246 10.10.10.247 10.10.10.248 10.10.10.249 10.10.10.250 10.10.10.251 10.10.10.252 10.10.10.253 10.10.10.254 10.10.10.255
+11/15/2023 10:59:01 PM - INFO - Network: Forming list of possible hosts on network
+11/15/2023 10:59:01 PM - INFO - Network: Host list successfully formed
+11/15/2023 10:59:01 PM - INFO - Network: Applying exclusions to hosts
+11/15/2023 10:59:01 PM - INFO - Network: Exclusions applied successfully
+11/15/2023 10:59:01 PM - INFO - SSH: Beginning scan of target network. Ports to scan: 22 222 2223
+11/15/2023 10:59:01 PM - INFO - SSH: Scanning 10.10.10.1:22 for listening SSH-server
+11/15/2023 10:59:04 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:04 PM - INFO - SSH: Scanning 10.10.10.1:222 for listening SSH-server
+11/15/2023 10:59:07 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:07 PM - INFO - SSH: Scanning 10.10.10.1:2223 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.3:22 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is open
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.3:222 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.3:2223 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.4:22 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is open
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.4:222 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.4:2223 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.5:22 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is open
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.5:222 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.5:2223 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.6:22 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is open
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.6:222 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SSH: Scanning 10.10.10.6:2223 for listening SSH-server
+11/15/2023 10:59:10 PM - INFO - SSH: Port is closed
+11/15/2023 10:59:10 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres without database
+11/15/2023 10:59:10 PM - INFO - SQL: Connection successful
+11/15/2023 10:59:10 PM - INFO - SQL: Creating database VM
+11/15/2023 10:59:10 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:10 PM - INFO - SQL: Query: CREATE DATABASE VM;
+11/15/2023 10:59:10 PM - WARNING - SQL: Database VM already exists
+11/15/2023 10:59:10 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:59:10 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:59:10 PM - INFO - SQL: Connection successful
+11/15/2023 10:59:10 PM - INFO - SQL: Creating schema VM_schema
+11/15/2023 10:59:10 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:10 PM - INFO - SQL: Query: CREATE SCHEMA IF NOT EXISTS VM_schema;
+11/15/2023 10:59:10 PM - INFO - SQL: Query successful
+11/15/2023 10:59:10 PM - INFO - SQL: Creating table results in schema VM_schema
+11/15/2023 10:59:10 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:10 PM - INFO - SQL: Query: 
+            CREATE TABLE VM_schema.results(
+            ID  SERIAL PRIMARY KEY,
+            IP           TEXT      NOT NULL,
+            OS           TEXT       NOT NULL,
+            version      TEXT       NOT NULL,
+            architecture TEXT       NOT NULL
+        );
+11/15/2023 10:59:10 PM - INFO - SSH: Trying SSH connection to 10.10.10.3:22 as user root
+11/15/2023 10:59:10 PM - INFO - Connected (version 2.0, client OpenSSH_9.2p1)
+11/15/2023 10:59:10 PM - INFO - Authentication (password) successful!
+11/15/2023 10:59:10 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:59:10 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:59:11 PM - INFO - SSH: Command output: PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+11/15/2023 10:59:11 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:59:11 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:59:11 PM - INFO - SSH: Terminating connection to 10.10.10.3:22
+11/15/2023 10:59:11 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:59:11 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:59:11 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:11 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.3','Debian','12 (bookworm)','x86_64');
+            
+11/15/2023 10:59:11 PM - INFO - SQL: Query successful
+11/15/2023 10:59:11 PM - INFO - SSH: Trying SSH connection to 10.10.10.4:22 as user root
+11/15/2023 10:59:11 PM - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+11/15/2023 10:59:11 PM - INFO - Authentication (password) successful!
+11/15/2023 10:59:11 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:59:11 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:59:11 PM - INFO - SSH: Command output: PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.3 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+
+11/15/2023 10:59:11 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:59:11 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:59:11 PM - INFO - SSH: Terminating connection to 10.10.10.4:22
+11/15/2023 10:59:11 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:59:11 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:59:11 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:11 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.4','Ubuntu','22.04.3 LTS (Jammy Jellyfish)','x86_64');
+            
+11/15/2023 10:59:11 PM - INFO - SQL: Query successful
+11/15/2023 10:59:11 PM - INFO - SSH: Trying SSH connection to 10.10.10.5:22 as user root
+11/15/2023 10:59:11 PM - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+11/15/2023 10:59:11 PM - INFO - Authentication (password) successful!
+11/15/2023 10:59:11 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:59:11 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:59:11 PM - INFO - SSH: Command output: NAME="Linux Mint"
+VERSION="21.2 (Victoria)"
+ID=linuxmint
+ID_LIKE="ubuntu debian"
+PRETTY_NAME="Linux Mint 21.2"
+VERSION_ID="21.2"
+HOME_URL="https://www.linuxmint.com/"
+SUPPORT_URL="https://forums.linuxmint.com/"
+BUG_REPORT_URL="http://linuxmint-troubleshooting-guide.readthedocs.io/en/latest/"
+PRIVACY_POLICY_URL="https://www.linuxmint.com/"
+VERSION_CODENAME=victoria
+UBUNTU_CODENAME=jammy
+
+11/15/2023 10:59:11 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:59:11 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:59:11 PM - INFO - SSH: Terminating connection to 10.10.10.5:22
+11/15/2023 10:59:11 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:59:11 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:59:11 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:11 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.5','Other Linux','21.2 (Victoria)','x86_64');
+            
+11/15/2023 10:59:11 PM - INFO - SQL: Query successful
+11/15/2023 10:59:11 PM - INFO - SSH: Trying SSH connection to 10.10.10.6:22 as user root
+11/15/2023 10:59:11 PM - INFO - Connected (version 2.0, client OpenSSH_9.5)
+11/15/2023 10:59:12 PM - INFO - Authentication (password) successful!
+11/15/2023 10:59:12 PM - INFO - SSH: Connection established successfully
+11/15/2023 10:59:12 PM - INFO - SSH: Executin command cat /etc/os-release
+11/15/2023 10:59:12 PM - INFO - SSH: Command output: NAME="Manjaro Linux"
+PRETTY_NAME="Manjaro Linux"
+ID=manjaro
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="32;1;24;144;200"
+HOME_URL="https://manjaro.org/"
+DOCUMENTATION_URL="https://wiki.manjaro.org/"
+SUPPORT_URL="https://forum.manjaro.org/"
+BUG_REPORT_URL="https://docs.manjaro.org/reporting-bugs/"
+PRIVACY_POLICY_URL="https://manjaro.org/privacy-policy/"
+LOGO=manjarolinux
+
+11/15/2023 10:59:12 PM - INFO - SSH: Executin command cat /etc/lsb-release
+11/15/2023 10:59:12 PM - INFO - SSH: Command output: DISTRIB_ID="ManjaroLinux"
+DISTRIB_RELEASE="23.1.0"
+DISTRIB_CODENAME="Vulcan"
+DISTRIB_DESCRIPTION="Manjaro Linux"
+
+11/15/2023 10:59:12 PM - INFO - SSH: Executin command uname -m
+11/15/2023 10:59:12 PM - INFO - SSH: Command output: x86_64
+
+11/15/2023 10:59:12 PM - INFO - SSH: Terminating connection to 10.10.10.6:22
+11/15/2023 10:59:12 PM - INFO - SSH: Connection terminated successfully
+11/15/2023 10:59:12 PM - INFO - SQL: Inserting values into database vm
+11/15/2023 10:59:12 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:12 PM - INFO - SQL: Query: 
+            INSERT INTO VM_schema.results
+            (IP, OS, version, architecture) VALUES
+            ('10.10.10.6','Manjaro','23.1.0','x86_64');
+            
+11/15/2023 10:59:12 PM - INFO - SQL: Query successful
+11/15/2023 10:59:12 PM - INFO - SQL: Closing connection to PostgreSQL. Database: vm
+11/15/2023 10:59:12 PM - INFO - SQL: Connecting to PostgreSQL on host localhost as user postgres with database VM
+11/15/2023 10:59:12 PM - INFO - SQL: Connection successful
+11/15/2023 10:59:12 PM - INFO - Getting values from table VM_schema.results
+11/15/2023 10:59:12 PM - INFO - SQL: Performing a query to PostgreSQL
+11/15/2023 10:59:12 PM - INFO - SQL: Query: 
+            SELECT * FROM VM_schema.results;
+        
+11/15/2023 10:59:12 PM - INFO - SQL: Query successful
